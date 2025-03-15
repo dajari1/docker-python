@@ -35,9 +35,9 @@ def aboutus():
     
 @app.route('/homepage')
 def homepage():
-    name="Mrs Akinfolaju"
-    email="peju@yahoo.com"
-    return render_template('homepage.html', name=name,email=email)
+    firstname="Mrs Akinfolaju"
+    emailaddress="peju@yahoo.com"
+    return render_template('homepage.html', name=firstname,email=emailaddress)
  
 if __name__ == '__main__':
     app.run(host='127.0.0.1', port=5007, debug=True)
