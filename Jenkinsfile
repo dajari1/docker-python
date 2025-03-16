@@ -14,7 +14,7 @@ pipeline{
             steps{
                 sh 'printenv'
                 sh 'git version'
-                sh 'docker build . -t dajari1/hunter-1'
+                sh 'docker build . -t dajari1/miller-app'
             }
         }
         stage("push image to dockerhub"){
@@ -24,7 +24,7 @@ pipeline{
                     withCredentials([string(credentialsId: 'DockerID', variable: 'DockerID')]) {
                         sh 'docker login -u dajari1 -p ${DockerID}'
                     }
-                        sh 'docker push dajari1/hunter-1:latest'
+                        sh 'docker push dajari1/miller-app:latest'
             }
             }
         }
